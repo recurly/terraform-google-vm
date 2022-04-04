@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-#terraform {
-#  required_version = ">= 0.12.6"
-#}
 terraform {
   required_version = ">= 0.13.0"
 }
