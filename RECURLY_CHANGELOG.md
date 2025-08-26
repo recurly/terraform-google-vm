@@ -1,5 +1,9 @@
+## [v2.0.10_recurly] 2025-08-26
+- Remove the project_id from the mysql_vm_iam secretAccessor IAM grant
+
 ## [v2.0.9_recurly] 2025-08-12
 - replace count in VM IAM with for_each
+
 ## [v2.0.8_recurly] 2024-09-26
 - Remove time limit in JIT MySQL access
 
