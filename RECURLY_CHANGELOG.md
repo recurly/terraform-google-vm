@@ -1,6 +1,7 @@
-## [v2.0.10_recurly] 2026-09-05
+## [v2.0.11_recurly] 2026-09-29
 
-- Remove secretAccessor grants from the mysql_vm_iam module
+- Key mysql_vm_iam resources by hostname (for_each) instead of positional count; add instance_zones_by_host / instance_ips_by_host map inputs; legacy list inputs now optional
+- Also carries the previously untagged removal of secretAccessor grants and the secrets variable (see README for the state mv migration)
 
 ## [v2.0.10_recurly] 2025-08-26
 

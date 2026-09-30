@@ -45,9 +45,11 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_iam_dba_email"></a> [iam\_dba\_email](#input\_iam\_dba\_email) | IAM format of the DBA Group Email in Gsuite | `string` | n/a | yes |
 | <a name="input_iap_accessor_iam"></a> [iap\_accessor\_iam](#input\_iap\_accessor\_iam) | IAM Email of the group that can access the instances via IAP | `string` | `null` | no |
-| <a name="input_instance_hostnames"></a> [instance\_hostnames](#input\_instance\_hostnames) | List of hostnames | `list(string)` | n/a | yes |
-| <a name="input_instance_ips"></a> [instance\_ips](#input\_instance\_ips) | List of IP addresses | `list(string)` | `[]` | no |
-| <a name="input_instance_zones"></a> [instance\_zones](#input\_instance\_zones) | List of zones for each hostname | `list(string)` | n/a | yes |
+| <a name="input_instance_hostnames"></a> [instance\_hostnames](#input\_instance\_hostnames) | List of hostnames. Legacy: prefer instance\_zones\_by\_host keys. | `list(string)` | `null` | no |
+| <a name="input_instance_ips"></a> [instance\_ips](#input\_instance\_ips) | List of IP addresses. Legacy: prefer instance\_ips\_by\_host. | `list(string)` | `[]` | no |
+| <a name="input_instance_ips_by_host"></a> [instance\_ips\_by\_host](#input\_instance\_ips\_by\_host) | Map of hostname to internal IP. Preferred over the instance\_ips list; takes precedence when both are provided. | `map(string)` | `null` | no |
+| <a name="input_instance_zones"></a> [instance\_zones](#input\_instance\_zones) | List of zones for each hostname. Legacy: prefer instance\_zones\_by\_host. | `list(string)` | `null` | no |
+| <a name="input_instance_zones_by_host"></a> [instance\_zones\_by\_host](#input\_instance\_zones\_by\_host) | Map of hostname to zone. Preferred over the instance\_hostnames/instance\_zones lists; takes precedence when both are provided. | `map(string)` | `null` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The GCP Project ID for the instances. | `string` | n/a | yes |
 | <a name="input_service_account"></a> [service\_account](#input\_service\_account) | Service account to be used for taking snapshots | `string` | n/a | yes |
 
