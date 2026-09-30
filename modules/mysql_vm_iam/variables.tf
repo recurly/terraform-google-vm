@@ -15,12 +15,26 @@ variable "iam_dba_email" {
 
 variable "instance_zones" {
   type        = list(string)
-  description = "List of zones for each hostname"
+  description = "List of zones for each hostname. Legacy: prefer instance_zones_by_host."
+  default     = null
 }
 
 variable "instance_hostnames" {
   type        = list(string)
-  description = "List of hostnames"
+  description = "List of hostnames. Legacy: prefer instance_zones_by_host keys."
+  default     = null
+}
+
+variable "instance_zones_by_host" {
+  type        = map(string)
+  description = "Map of hostname to zone. Preferred over the instance_hostnames/instance_zones lists; takes precedence when both are provided."
+  default     = null
+}
+
+variable "instance_ips_by_host" {
+  type        = map(string)
+  description = "Map of hostname to internal IP. Preferred over the instance_ips list; takes precedence when both are provided."
+  default     = null
 }
 
 variable "instance_ips" {
